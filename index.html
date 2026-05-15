@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gabriel Medeiros | Portfólio </title>
+</head>
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+               <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+               <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+               <li>
+                <a href="#contatos" class="menu-link" >Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/biel.png" alt="Foto de Gabriel Medeiros" class="foto-perfil">
+        <h1>Gabriel Medeiros</h1>
+        <p class="c">Desenvolvedor Back end</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Sou desenvolvedor back-end apaixonado por tecnologia e focado em criar soluções modernas, eficientes e confiáveis. Desenvolvo aplicações com código limpo, organização e alta performance, unindo funcionalidade e design para entregar experiências profissionais, intuitivas e visualmente impactantes.
+
+            </p>
+        </div>
+
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/download-_1_.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-projetos">Mapa de Geolocalização</h3>
+                <p class="paragrafo-projetos">Localização estratégica para melhor atender você. Confira no mapa onde estamos e encontre a rota mais rápida com facilidade e praticidade
+</p>            
+                </div>
+            </div>
+
+                  <div class="projetos-card">
+                <img src="./img/download-_2_.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-projetos">Análise financeira</h3>
+                <p class="paragrafo-projetos">Controle gastos, acompanhe despesas e visualize sua saúde financeira de forma simples e eficiente. Dados organizados para ajudar nas melhores decisões.
+                    </div>
+</p>
+            </div>
+
+                  <div class="projetos-card">
+                <img src="./img/Stock-photos_-royalty-free-images_-graphics_-vectors-_-videos.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-projetos">Sistema de Saúde</h3>
+                <p class="paragrafo-projetos">“Gerencie exames, consultas e medicações em um só lugar. Uma plataforma prática e organizada para acompanhar informações importantes com mais agilidade e segurança.”
+                    </div>
+</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Digite Sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5583986571214';
+
+        const texto = `Olá ! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        window.open(url, '_blank')
+        }
+    
+    </script>
+
+</body>
+</html>
